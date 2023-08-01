@@ -1,0 +1,60 @@
+<template>
+    <div class="slds-var-m-vertical_xx-small">
+        <lightning-card title="for:each loop card (list)">
+            <ul class="slds-var-p-horizontal_small">
+                <template for:each={users} for:item="user">
+                    <li key={user}>{user}</li>
+                </template>
+            </ul>
+        </lightning-card>
+    </div>
+
+    <div class="slds-var-m-vertical_xx-small">
+        <lightning-card title="for:each loop card (object)">
+            <ul class="slds-var-p-horizontal_small">
+                <template for:each={dozy} for:item="doz">
+                    <li key={doz.id}>{doz.location} - {doz.size}</li>
+                </template>
+            </ul>
+        </lightning-card>
+    </div>
+
+    <div class="slds-var-m-vertical_xx-small">
+        <lightning-card title="iterator card (list)">
+            <ul class="slds-var-p-horizontal_small">
+                <template iterator:user={users}>
+                    <li key={user}>{user.value}</li>
+                </template>
+            </ul>
+        </lightning-card>
+    </div>
+
+    <div class="slds-var-m-vertical_xx-small">
+        <lightning-card title="iterator card (object)">
+            <ul class="slds-var-p-horizontal_small">
+                <template iterator:doz={dozy}>
+                    <div key={doz.id}>
+                        <template if:true={doz.first}>
+                            <div class="slds-var-m-vertical_xx-small">
+                                <div class="slds-box slds-box_xx-small">
+                                    <p>DOZ list</p>
+                                </div>
+                            </div>
+                            <li><strong>{doz.value.id} - {doz.value.location} - {doz.value.size}</strong></li>
+                        </template>
+                        <template if:false={doz.first}>
+                            <li>{doz.value.id} - {doz.value.location} - {doz.value.size}</li>
+                        </template>
+                        <div class="slds-var-m-vertical_xx-small">
+                            <template if:true={doz.last}>
+                                <div class="slds-box slds-box_xx-small">
+                                    <p>Last DOZ</p>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </ul>
+        </lightning-card>
+    </div>
+</template>

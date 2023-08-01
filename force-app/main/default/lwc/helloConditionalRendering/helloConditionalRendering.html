@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-var-m-around_x-small">
+        <lightning-card title="Conditional rendering">
+            <div class="slds-var-m-around_x-small">
+                <lightning-button
+                    label="Switch Data Display"
+                    title="Switch Data Display"
+                    onclick={handleClick}
+                    class="slds-var-m-left_x-small"
+                ></lightning-button>
+
+                <div class="slds-var-m-around_x-small">
+                    <template if:true={isVisible}>
+                        <div>Welcome, isVisible is true</div>
+                    </template>
+                </div>
+
+                <div class="slds-var-m-around_x-small lgc-bg">
+                    <lightning-input
+                        type="text"
+                        label="Type password to see data"
+                        onkeyup={changeHandler}
+                    ></lightning-input>
+                </div>
+                <div class="slds-var-m-around_x-small">
+                    <template if:true={helloMethod}>
+                        <div>Welcome, data is for you</div>
+                    </template>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>
