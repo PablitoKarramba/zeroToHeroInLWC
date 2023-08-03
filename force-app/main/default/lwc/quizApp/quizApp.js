@@ -1,7 +1,7 @@
 import { LightningElement } from "lwc";
 
 export default class QuizApp extends LightningElement {
-    answers = {};
+    selected = {};
 
     score = 0;
     isSubmitted = false;
@@ -40,10 +40,12 @@ export default class QuizApp extends LightningElement {
     ];
 
     changeHandler(event) {
-        const name = event.target.name;
-        const value = event.target.value;
-        // const {name, value} = event.target
-        this.answers = { ...this.answers, [name]: value };
+        // console.log("name:", event.target.name);
+        // console.log("value:", event.target.value);
+        // const name = event.target.name;
+        // const value = event.target.value;
+        const { name, value } = event.target;
+        this.selected = { ...this.selected, [name]: value };
     }
 
     clickHandler(event) {
@@ -51,16 +53,18 @@ export default class QuizApp extends LightningElement {
         if (button === "Submit") {
             // Calculate correct answers
             event.preventDefault();
-            let correct = this.myQuestions.filter((item) => this.answers[item.id] === item.score);
+            let correct = this.myQuestions.filter((item) => this.selected[item.id] === item.correctAnswer);
             this.score = correct.length;
             this.isSubmitted = true;
         } else if (button === "Reset") {
-            console.log("Pressed reset");
+            this.selected = {};
+            this.score = 0;
+            this.isSubmitted = false;
         }
     }
 
     get allNotSelected() {
-        return !(Object.keys(this.answers).length === this.myQuestions.length);
+        return !(Object.keys(this.selected).length === this.myQuestions.length);
     }
 
     get isQuizCorrect() {

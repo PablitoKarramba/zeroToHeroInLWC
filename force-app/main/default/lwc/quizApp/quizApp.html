@@ -13,7 +13,7 @@
                                     type="radio"
                                     id={question.id}
                                     name={question.id}
-                                    value={question.answers.a}
+                                    value="a"
                                     onchange={changeHandler}
                                 />
                                 <label for={question.id}>{question.answers.a}</label>
@@ -23,7 +23,7 @@
                                     type="radio"
                                     id={question.id}
                                     name={question.id}
-                                    value={question.answers.b}
+                                    value="b"
                                     onchange={changeHandler}
                                 />
                                 <label for={question.id}>{question.answers.b}</label>
@@ -33,7 +33,7 @@
                                     type="radio"
                                     id={question.id}
                                     name={question.id}
-                                    value={question.answers.c}
+                                    value="c"
                                     onchange={changeHandler}
                                 />
                                 <label for={question.id}>{question.answers.c}</label>
@@ -44,6 +44,7 @@
                 <div class="slds-var-m-vertical_xx-small">
                     <lightning-button
                         variant="brand"
+                        type="submit"
                         label="Submit"
                         title="Submit Quiz"
                         onclick={clickHandler}
@@ -52,16 +53,17 @@
                     ></lightning-button>
                     <lightning-button
                         variant="destructive"
+                        type="reset"
                         label="Reset"
                         title="Reset Quiz"
                         onclick={clickHandler}
                         class="slds-var-m-around_xx-small"
                     ></lightning-button>
-                    <template if:true={isSubmitted}>
-                        <div class={isQuizCorrect}>Your score is: {score}/{myQuestions.length}</div></template
-                    >
                 </div>
             </form>
+            <template if:true={isSubmitted}>
+                <div class={isQuizCorrect}>Your score is: {score}/{myQuestions.length}</div>
+            </template>
         </div>
     </lightning-card>
 </template>
