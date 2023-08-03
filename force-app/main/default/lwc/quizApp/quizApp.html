@@ -1,0 +1,67 @@
+<template>
+    <lightning-card title="Quiz App in LWC">
+        <div class="slds-var-m-around_medium">
+            <form>
+                <template for:each={myQuestions} for:item="question">
+                    <div key={question.id}>
+                        <div>
+                            <strong>{question.id} - {question.question}</strong>
+                        </div>
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <input
+                                    type="radio"
+                                    id={question.id}
+                                    name={question.id}
+                                    value={question.answers.a}
+                                    onchange={changeHandler}
+                                />
+                                <label for={question.id}>{question.answers.a}</label>
+                            </div>
+                            <div class="slds-col">
+                                <input
+                                    type="radio"
+                                    id={question.id}
+                                    name={question.id}
+                                    value={question.answers.b}
+                                    onchange={changeHandler}
+                                />
+                                <label for={question.id}>{question.answers.b}</label>
+                            </div>
+                            <div class="slds-col">
+                                <input
+                                    type="radio"
+                                    id={question.id}
+                                    name={question.id}
+                                    value={question.answers.c}
+                                    onchange={changeHandler}
+                                />
+                                <label for={question.id}>{question.answers.c}</label>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <div class="slds-var-m-vertical_xx-small">
+                    <lightning-button
+                        variant="brand"
+                        label="Submit"
+                        title="Submit Quiz"
+                        onclick={clickHandler}
+                        disabled={allNotSelected}
+                        class="slds-var-m-around_xx-small"
+                    ></lightning-button>
+                    <lightning-button
+                        variant="destructive"
+                        label="Reset"
+                        title="Reset Quiz"
+                        onclick={clickHandler}
+                        class="slds-var-m-around_xx-small"
+                    ></lightning-button>
+                    <template if:true={isSubmitted}>
+                        <div class={isQuizCorrect}>Your score is: {score}/{myQuestions.length}</div></template
+                    >
+                </div>
+            </form>
+        </div>
+    </lightning-card>
+</template>
