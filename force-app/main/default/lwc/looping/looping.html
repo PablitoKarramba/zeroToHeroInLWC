@@ -23,7 +23,7 @@
         <lightning-card title="iterator card (list)">
             <ul class="slds-var-p-horizontal_small">
                 <template iterator:user={users}>
-                    <li key={user.value}>{user.value}</li>
+                    <li key={user.key}>{user.value}</li>
                 </template>
             </ul>
         </lightning-card>
