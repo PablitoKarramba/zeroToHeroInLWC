@@ -1,6 +1,6 @@
 p {
     color: antiquewhite;
-    font-size: 10px;
+    font-size: var(--var-fontSize10);
 }
 
 .placek:hover {

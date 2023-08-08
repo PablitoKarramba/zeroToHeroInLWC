@@ -10,4 +10,21 @@
             <div class="placek">Lubię placki</div>
         </div>
     </lightning-card>
+    <lightning-card title="Dynamic styling">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="number" value={percent} label="Percentage" onkeyup={changeHandler}></lightning-input>
+            <div
+                class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error"
+                role="alert"
+                style={percentage}
+            >
+                <p>Alert</p>
+            </div>
+        </div>
+    </lightning-card>
+    <lightning-card title="Shadow DOM styling">
+        <div class="slds-var-m-around_medium">
+            <lightning-button label="xyz"></lightning-button>
+        </div>
+    </lightning-card>
 </template>
