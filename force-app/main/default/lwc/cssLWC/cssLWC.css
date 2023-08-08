@@ -1,0 +1,8 @@
+p {
+    color: antiquewhite;
+    font-size: 10px;
+}
+
+.placek:hover {
+    color: brown;
+}
