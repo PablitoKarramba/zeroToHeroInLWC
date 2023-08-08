@@ -13,6 +13,7 @@
     <navType>Standard</navType>
     <tabs>LWC_Fundamentals</tabs>
     <tabs>Quiz_App</tabs>
+    <tabs>CSS_Styling_in_LWC</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Zero_to_Hero_In_LWC_UtilityBar</utilityBar>
 </CustomApplication>

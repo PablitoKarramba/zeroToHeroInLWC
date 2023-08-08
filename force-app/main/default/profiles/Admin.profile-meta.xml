@@ -7,6 +7,10 @@
     </applicationVisibilities>
     <custom>false</custom>
     <tabVisibilities>
+        <tab>CSS_Styling_in_LWC</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>LWC_Fundamentals</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
