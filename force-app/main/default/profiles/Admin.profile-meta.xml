@@ -11,6 +11,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Component_lifecycle</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>LWC_Fundamentals</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
