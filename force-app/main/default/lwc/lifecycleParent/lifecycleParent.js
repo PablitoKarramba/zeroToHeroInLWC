@@ -1,7 +1,11 @@
 import { LightningElement } from "lwc";
+import signinTemplate from "./signinTemplate.html";
+import signupTemplate from "./signupTemplate.html";
+import lifecycleParent from "./lifecycleParent.html";
 
 export default class LifecycleParent extends LightningElement {
     isChildVisible = false;
+    selectedButton = "";
     constructor() {
         super();
         console.log("Parent constructor call");
@@ -25,7 +29,23 @@ export default class LifecycleParent extends LightningElement {
         console.log(stack);
     }
 
-    handleClick() {
-        this.isChildVisible = !this.isChildVisible;
+    handleClick(event) {
+        this.selectedButton = event.target.label;
+
+        if (this.selectedButton === "Show child" || this.selectedButton === "Hide child") {
+            this.isChildVisible = !this.isChildVisible;
+        }
+    }
+
+    submitHandler(event) {
+        console.log(`${event.target.label} is a success`);
+    }
+
+    render() {
+        return this.selectedButton === "Sign up"
+            ? signupTemplate
+            : this.selectedButton === "Sign in"
+            ? signinTemplate
+            : lifecycleParent;
     }
 }
