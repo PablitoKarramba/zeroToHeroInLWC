@@ -15,6 +15,7 @@
     <tabs>Quiz_App</tabs>
     <tabs>CSS_Styling_in_LWC</tabs>
     <tabs>Component_lifecycle</tabs>
+    <tabs>Components_Communication</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Zero_to_Hero_In_LWC_UtilityBar</utilityBar>
 </CustomApplication>
